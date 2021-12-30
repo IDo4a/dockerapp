@@ -29,11 +29,11 @@ jobs:
           workflow: terrafrom.yml
           workflow_conclusion: success
           name: terraform
-          repo: nlemeshko/lesson12
+          repo: ido4a/lesson12
 
       - id: host
         env:
-          SSH: ${{ secrets.SSH_PRIVATE_KEY }}
+          SSH: ${{ secrets.git }}
         run: |
             host=$(grep "ec2_endpoint" terraform.log | awk -F  ":" '{print $1}' )
             host=${host//'ec2_endpoint = "'}
