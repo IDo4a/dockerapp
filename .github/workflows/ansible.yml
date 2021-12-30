@@ -29,7 +29,6 @@ jobs:
           workflow: terrafrom.yml
           workflow_conclusion: success
           name: terraform
-          repo: ${{github.repository}}
 
       - id: host
         env:
