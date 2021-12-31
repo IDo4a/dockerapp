@@ -33,7 +33,7 @@ jobs:
 
       - id: host
         env:
-          SSH: ${{ secrets.git }}
+          SSH: ${{ secrets.SSH_PRIVATE_KEY }}
         run: |
             host=$(grep "ec2_endpoint" terraform.log | awk -F  ":" '{print $1}' )
             host=${host//'ec2_endpoint = "'}
